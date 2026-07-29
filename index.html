@@ -17,11 +17,19 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       background: radial-gradient(circle at top, #1c1a00 0%, #0a0a0a 70%, #000000 100%);
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: #ffffff;
-      padding: 20px;
+      padding: 40px 20px 20px 20px;
+    }
+
+    /* Conteúdo principal */
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
 
     /* Título principal */
@@ -48,7 +56,7 @@
     .banner-btn {
       display: block;
       width: 100%;
-      aspect-ratio: 16 / 9; /* Proporção padrão de banner */
+      aspect-ratio: 16 / 9;
       border-radius: 16px;
       overflow: hidden;
       border: 2px solid #ffd700;
@@ -71,37 +79,46 @@
       object-fit: cover;
       display: block;
     }
+
+    /* Estilo do Rodapé */
+    footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: rgba(255, 215, 0, 0.7);
+      letter-spacing: 1px;
+    }
   </style>
 </head>
 <body>
+
   <main>
-  <h1>Portfolio</h1>
+    <h1>Portfolio</h1>
 
-  <div class="grid-container">
-    <!-- Botão 1 -->
-    <a href="https://nocturne-205729277725.us-west2.run.app/" target="_blank" class="banner-btn">
-      <img src="assets/nocturne.png" alt="Banner Site 1" />
-    </a>
+    <div class="grid-container">
+      <!-- Botão 1: Nocturne -->
+      <a href="https://nocturne-205729277725.us-west2.run.app/" target="_blank" class="banner-btn">
+        <img src="assets/nocturne.png" alt="Nocturne" />
+      </a>
 
-    <!-- Botão 2 -->
-    <a href="https://escalas-pco.vercel.app/" target="_blank" class="banner-btn">
-      <img src="assets/escalas.png" alt="Banner Site 2" />
-    </a>
+      <!-- Botão 2: Escalas PCO -->
+      <a href="https://escalas-pco.vercel.app/" target="_blank" class="banner-btn">
+        <img src="assets/escalas.png" alt="Escalas PCO" />
+      </a>
 
-    <!-- Botão 3 -->
-    <a href="https://bolao-accre-2026.vercel.app/" target="_blank" class="banner-btn">
-      <img src="assets/bras.png" alt="Banner Site 3" />
-    </a>
+      <!-- Botão 3: Bolão ACCRE -->
+      <a href="https://bolao-accre-2026.vercel.app/" target="_blank" class="banner-btn">
+        <img src="assets/bras.png" alt="Bolão ACCRE 2026" />
+      </a>
 
-    <!-- Botão 4 -->
-    <a href="https://bolao-copa2026-indol.vercel.app/" target="_blank" class="banner-btn">
-      <img src="assets/copa.png" alt="Banner Site 4" />
-    </a>
-  </div>
-    </main>
+      <!-- Botão 4: Bolão Copa -->
+      <a href="https://bolao-copa2026-indol.vercel.app/" target="_blank" class="banner-btn">
+        <img src="assets/copa.png" alt="Bolão Copa 2026" />
+      </a>
+    </div>
+  </main>
 
   <footer>
-    - 2026 - Armindo Neto
+    2026 - Armindo Neto
   </footer>
 
 </body>
