@@ -87,7 +87,7 @@
     /* Logos quadrados: três lado a lado, imagem inteira centralizada */
     .banner-btn.logo {
       grid-column: span 2;
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 16 / 10;
       background: radial-gradient(circle at 50% 50%, #1d1a0a 0%, #0c0c0c 80%);
     }
 
@@ -96,10 +96,10 @@
       padding: 18px;
     }
 
-    /* Banners largos: linha inteira, recorte centralizado */
+    /* Banners largos: dois lado a lado, recorte centralizado */
     .banner-btn.wide {
-      grid-column: 1 / -1;
-      aspect-ratio: 3.4 / 1;
+      grid-column: span 3;
+      aspect-ratio: 2.6 / 1;
     }
 
     .banner-btn.wide img {
@@ -114,10 +114,16 @@
       letter-spacing: 1px;
     }
 
+    /* Mobile compacto: os 5 botões cabem na tela sem rolar */
     @media (max-width: 640px) {
-      .grid-container { grid-template-columns: 1fr; gap: 16px; }
-      .banner-btn.logo { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
-      .banner-btn.wide { aspect-ratio: 2.4 / 1; }
+      body { padding: 24px 14px 12px 14px; }
+      h1 { font-size: 1.5rem; margin-bottom: 20px; }
+      .grid-container { gap: 10px; }
+      .banner-btn { border-radius: 14px; }
+      .banner-btn.logo { aspect-ratio: 1 / 1; }
+      .banner-btn.logo img { padding: 10px; }
+      .banner-btn.wide { grid-column: 1 / -1; }
+      footer { margin-top: 20px; font-size: 0.75rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
