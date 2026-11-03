@@ -21,14 +21,60 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      background:
-        radial-gradient(800px 500px at 50% -10%, rgba(255, 215, 0, 0.12), transparent 65%),
-        #0a0a0a;
-      background-attachment: fixed;
+      background: #060605;
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: #ffffff;
       padding: 56px 20px 20px 20px;
     }
+
+    /* Fundo: preto com grade sutil, brilhos dourados e vinheta */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.7) 100%),
+        radial-gradient(900px 520px at 50% -8%, rgba(255, 200, 0, 0.17), transparent 65%),
+        radial-gradient(650px 420px at 105% 105%, rgba(184, 138, 10, 0.16), transparent 60%),
+        radial-gradient(500px 360px at -5% 70%, rgba(255, 215, 0, 0.06), transparent 60%);
+    }
+
+    /* Grade fina que se dissolve nas bordas */
+    .bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 215, 0, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 215, 0, 0.07) 1px, transparent 1px);
+      background-size: 48px 48px;
+      -webkit-mask-image: radial-gradient(ellipse at 50% 35%, #000 0%, transparent 72%);
+      mask-image: radial-gradient(ellipse at 50% 35%, #000 0%, transparent 72%);
+    }
+
+    /* Orbe dourado que flutua devagar */
+    .bg::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 38%;
+      width: 70vmax;
+      height: 70vmax;
+      margin: -35vmax 0 0 -35vmax;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 215, 0, 0.11) 0%, transparent 62%);
+      animation: drift 22s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+
+    @keyframes drift {
+      from { transform: translate(-14%, -8%) scale(0.95); }
+      to   { transform: translate(14%, 10%) scale(1.1); }
+    }
+
+    main, footer { position: relative; z-index: 1; }
 
     main {
       display: flex;
@@ -149,6 +195,7 @@
       }
       h1 { font-size: clamp(2rem, 9.5vw, 2.7rem); margin-bottom: 18px; }
       .grid-container { gap: 10px; }
+      .bg::before { background-size: 36px 36px; }
       .banner-btn { border-radius: 14px; }
       .banner-btn.logo { aspect-ratio: 1 / 1; max-height: 17dvh; }
       .banner-btn.logo img { padding: 10px; }
@@ -158,12 +205,15 @@
 
     @media (prefers-reduced-motion: reduce) {
       .banner-btn { transition: none; }
+      .bg::after { animation: none; }
     }
   </style>
   <!-- Vercel Web Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
+
+  <div class="bg" aria-hidden="true"></div>
 
   <main>
     <h1>Portfolio</h1>
