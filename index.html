@@ -96,11 +96,16 @@
       padding: 18px;
     }
 
-    /* PCO: azul do brasão com brilho dourado */
+    /* PCO: azul e amarelo do brasão */
     .banner-btn.logo.pco {
       background:
-        radial-gradient(circle at 50% 45%, rgba(255, 215, 0, 0.32) 0%, rgba(255, 215, 0, 0) 55%),
-        linear-gradient(145deg, #0b2a66 0%, #123f94 55%, #0a1c45 100%);
+        radial-gradient(circle at 50% 50%, rgba(255, 221, 51, 0.45) 0%, rgba(255, 221, 51, 0) 55%),
+        linear-gradient(135deg, #0a2a73 0%, #1b4fb3 42%, #f2b705 100%);
+    }
+
+    /* Nexus: centro preto, exterior dourado */
+    .banner-btn.logo.nexus {
+      background: radial-gradient(ellipse at center, #000000 0%, #050400 38%, #3d2e03 68%, #b88a0a 100%);
     }
 
     /* Beamshare: roxo e ciano da logo */
@@ -165,8 +170,8 @@
 
     <div class="grid-container">
       <!-- Botão 1: Nexus -->
-      <a href="https://thenexus.ai.studio/" target="_blank" rel="noopener" class="banner-btn logo">
-        <img src="assets/nexus.png" alt="Nexus" />
+      <a href="https://thenexus.ai.studio/" target="_blank" rel="noopener" class="banner-btn logo nexus">
+        <img src="assets/nexusb.png" alt="Nexus" />
       </a>
 
       <!-- Botão 2: Escalas PCO -->
