@@ -114,16 +114,22 @@
       letter-spacing: 1px;
     }
 
-    /* Mobile compacto: os 5 botões cabem na tela sem rolar */
+    /* Mobile compacto: tudo cabe numa tela só, sem rolagem */
     @media (max-width: 640px) {
-      body { padding: 24px 14px 12px 14px; }
-      h1 { font-size: 1.5rem; margin-bottom: 20px; }
+      html, body { height: 100%; overflow: hidden; }
+      body {
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+        padding: 22px 14px 10px 14px;
+      }
+      h1 { font-size: clamp(2rem, 9.5vw, 2.7rem); margin-bottom: 18px; }
       .grid-container { gap: 10px; }
       .banner-btn { border-radius: 14px; }
-      .banner-btn.logo { aspect-ratio: 1 / 1; }
+      .banner-btn.logo { aspect-ratio: 1 / 1; max-height: 17dvh; }
       .banner-btn.logo img { padding: 10px; }
-      .banner-btn.wide { grid-column: 1 / -1; }
-      footer { margin-top: 20px; font-size: 0.75rem; }
+      .banner-btn.wide { grid-column: 1 / -1; aspect-ratio: 2.4 / 1; max-height: 21dvh; }
+      footer { margin-top: 12px; font-size: 0.75rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
