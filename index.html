@@ -96,6 +96,25 @@
       padding: 18px;
     }
 
+    /* PCO: azul do brasão com brilho dourado */
+    .banner-btn.logo.pco {
+      background:
+        radial-gradient(circle at 50% 45%, rgba(255, 215, 0, 0.32) 0%, rgba(255, 215, 0, 0) 55%),
+        linear-gradient(145deg, #0b2a66 0%, #123f94 55%, #0a1c45 100%);
+    }
+
+    /* Beamshare: roxo e ciano da logo */
+    .banner-btn.logo.beam {
+      background:
+        radial-gradient(circle at 50% 50%, rgba(0, 245, 245, 0.30) 0%, rgba(0, 245, 245, 0) 55%),
+        linear-gradient(145deg, #3a1275 0%, #2a2a8f 55%, #0c5a8a 100%);
+    }
+
+    .banner-btn.logo.pco img,
+    .banner-btn.logo.beam img {
+      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.45));
+    }
+
     /* Banners largos: dois lado a lado, recorte centralizado */
     .banner-btn.wide {
       grid-column: span 3;
@@ -151,12 +170,12 @@
       </a>
 
       <!-- Botão 2: Escalas PCO -->
-      <a href="https://escalas-pco.vercel.app/" target="_blank" rel="noopener" class="banner-btn logo">
+      <a href="https://escalas-pco.vercel.app/" target="_blank" rel="noopener" class="banner-btn logo pco">
         <img src="assets/pco.png" alt="Escalas PCO" />
       </a>
 
       <!-- Botão 3: Beamshare -->
-      <a href="https://beamshare-files.vercel.app/" target="_blank" rel="noopener" class="banner-btn logo">
+      <a href="https://beamshare-files.vercel.app/" target="_blank" rel="noopener" class="banner-btn logo beam">
         <img src="assets/beamshare.png" alt="Beamshare" />
       </a>
 
