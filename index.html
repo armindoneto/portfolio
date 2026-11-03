@@ -50,7 +50,7 @@
     /* Grid: 2 colunas, banners largos ocupam a linha toda */
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       gap: 20px;
       width: 100%;
       max-width: 900px;
@@ -84,15 +84,16 @@
       display: block;
     }
 
-    /* Logos quadrados: lado a lado, imagem inteira centralizada */
+    /* Logos quadrados: três lado a lado, imagem inteira centralizada */
     .banner-btn.logo {
-      aspect-ratio: 16 / 9;
+      grid-column: span 2;
+      aspect-ratio: 4 / 3;
       background: radial-gradient(circle at 50% 50%, #1d1a0a 0%, #0c0c0c 80%);
     }
 
     .banner-btn.logo img {
       object-fit: contain;
-      padding: 14px;
+      padding: 18px;
     }
 
     /* Banners largos: linha inteira, recorte centralizado */
@@ -115,6 +116,7 @@
 
     @media (max-width: 640px) {
       .grid-container { grid-template-columns: 1fr; gap: 16px; }
+      .banner-btn.logo { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
       .banner-btn.wide { aspect-ratio: 2.4 / 1; }
     }
 
@@ -141,12 +143,17 @@
         <img src="assets/pco.png" alt="Escalas PCO" />
       </a>
 
-      <!-- Botão 3: Bolão ACCRE -->
+      <!-- Botão 3: Beamshare -->
+      <a href="https://beamshare-armindoneto.vercel.app/" target="_blank" rel="noopener" class="banner-btn logo">
+        <img src="assets/beamshare.png" alt="Beamshare" />
+      </a>
+
+      <!-- Botão 4: Bolão ACCRE -->
       <a href="https://bolao-accre-2026.vercel.app/" target="_blank" rel="noopener" class="banner-btn wide">
         <img src="assets/bras.png" alt="Bolão ACCRE 2026" />
       </a>
 
-      <!-- Botão 4: Bolão Copa -->
+      <!-- Botão 5: Bolão Copa -->
       <a href="https://bolao-copa2026-indol.vercel.app/" target="_blank" rel="noopener" class="banner-btn wide">
         <img src="assets/copa.png" alt="Bolão Copa 2026" />
       </a>
