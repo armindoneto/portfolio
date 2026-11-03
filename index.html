@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Armindo Neto - Portfolio</title>
-  
+
   <!-- Ícone da página (Favicon) -->
   <link rel="icon" type="image/png" href="assets/icon.png" />
 
   <style>
-    /* Reset básico */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -22,13 +21,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      background: radial-gradient(circle at top, #1c1a00 0%, #0a0a0a 70%, #000000 100%);
+      background:
+        radial-gradient(800px 500px at 50% -10%, rgba(255, 215, 0, 0.12), transparent 65%),
+        #0a0a0a;
+      background-attachment: fixed;
       font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       color: #ffffff;
-      padding: 40px 20px 20px 20px;
+      padding: 56px 20px 20px 20px;
     }
 
-    /* Conteúdo principal */
     main {
       display: flex;
       flex-direction: column;
@@ -36,60 +37,89 @@
       width: 100%;
     }
 
-    /* Título principal */
     h1 {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 6vw, 3rem);
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 40px;
+      letter-spacing: 0.12em;
+      margin-bottom: 44px;
       color: #ffd700;
-      text-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+      text-shadow: 0 0 24px rgba(255, 215, 0, 0.35);
     }
 
-    /* Grid dos botões */
+    /* Grid: 2 colunas, banners largos ocupam a linha toda */
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
       width: 100%;
       max-width: 900px;
     }
 
-    /* Estilo dos Botões/Links */
     .banner-btn {
       display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 16px;
+      border-radius: 18px;
       overflow: hidden;
-      border: 2px solid #ffd700;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 215, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-      background-color: #141414;
+      border: 1px solid rgba(255, 215, 0, 0.35);
+      background-color: #111;
       text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     }
 
     .banner-btn:hover {
-      transform: translateY(-6px) scale(1.02);
-      border-color: #fff066;
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.4);
+      transform: translateY(-4px);
+      border-color: #ffd700;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.75), 0 0 24px rgba(255, 215, 0, 0.25);
     }
 
-    /* Imagens dentro dos botões */
+    .banner-btn:focus-visible {
+      outline: 3px solid #ffd700;
+      outline-offset: 3px;
+    }
+
     .banner-btn img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
       display: block;
     }
 
-    /* Estilo do Rodapé */
+    /* Logos quadrados: lado a lado, imagem inteira centralizada */
+    .banner-btn.logo {
+      aspect-ratio: 16 / 9;
+      background: radial-gradient(circle at 50% 50%, #1d1a0a 0%, #0c0c0c 80%);
+    }
+
+    .banner-btn.logo img {
+      object-fit: contain;
+      padding: 14px;
+    }
+
+    /* Banners largos: linha inteira, recorte centralizado */
+    .banner-btn.wide {
+      grid-column: 1 / -1;
+      aspect-ratio: 3.4 / 1;
+    }
+
+    .banner-btn.wide img {
+      object-fit: cover;
+      object-position: center;
+    }
+
     footer {
       margin-top: 40px;
       font-size: 0.85rem;
       color: rgba(255, 215, 0, 0.7);
       letter-spacing: 1px;
+    }
+
+    @media (max-width: 640px) {
+      .grid-container { grid-template-columns: 1fr; gap: 16px; }
+      .banner-btn.wide { aspect-ratio: 2.4 / 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .banner-btn { transition: none; }
     }
   </style>
   <!-- Vercel Web Analytics -->
@@ -101,23 +131,23 @@
     <h1>Portfolio</h1>
 
     <div class="grid-container">
-      <!-- Botão 1: Nocturne -->
-      <a href="https://thenexus.ai.studio/" target="_blank" class="banner-btn">
-        <img src="assets/nocturne.png" alt="Nocturne" />
+      <!-- Botão 1: Nexus -->
+      <a href="https://thenexus.ai.studio/" target="_blank" rel="noopener" class="banner-btn logo">
+        <img src="assets/nexus.png" alt="Nexus" />
       </a>
 
       <!-- Botão 2: Escalas PCO -->
-      <a href="https://escalas-pco.vercel.app/" target="_blank" class="banner-btn">
-        <img src="assets/escalas.png" alt="Escalas PCO" />
+      <a href="https://escalas-pco.vercel.app/" target="_blank" rel="noopener" class="banner-btn logo">
+        <img src="assets/pco.png" alt="Escalas PCO" />
       </a>
 
       <!-- Botão 3: Bolão ACCRE -->
-      <a href="https://bolao-accre-2026.vercel.app/" target="_blank" class="banner-btn">
+      <a href="https://bolao-accre-2026.vercel.app/" target="_blank" rel="noopener" class="banner-btn wide">
         <img src="assets/bras.png" alt="Bolão ACCRE 2026" />
       </a>
 
       <!-- Botão 4: Bolão Copa -->
-      <a href="https://bolao-copa2026-indol.vercel.app/" target="_blank" class="banner-btn">
+      <a href="https://bolao-copa2026-indol.vercel.app/" target="_blank" rel="noopener" class="banner-btn wide">
         <img src="assets/copa.png" alt="Bolão Copa 2026" />
       </a>
     </div>
